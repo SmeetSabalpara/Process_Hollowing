@@ -1,0 +1,5 @@
+﻿  Process Hollowing.cpp
+C:\Users\Smeet-2\Desktop\Process Hollowing\Process Hollowing\Process Hollowing.cpp(407,55): warning C4244: 'initializing': conversion from 'DWORD64' to 'DWORD', possible loss of data
+C:\Users\Smeet-2\Desktop\Process Hollowing\Process Hollowing\Process Hollowing.cpp(407,29): warning C4244: 'initializing': conversion from 'DWORD64' to 'const DWORD', possible loss of data
+C:\Users\Smeet-2\Desktop\Process Hollowing\Process Hollowing\Process Hollowing.cpp(409,57): warning C4244: '=': conversion from 'DWORD64' to 'DWORD', possible loss of data
+  Process Hollowing.vcxproj -> C:\Users\Smeet-2\Desktop\Process Hollowing\x64\Debug\Process Hollowing.exe
