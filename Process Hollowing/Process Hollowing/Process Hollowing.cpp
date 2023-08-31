@@ -143,12 +143,6 @@ DWORD GetSubsystemEx32(const HANDLE hProcess, const LPVOID lpImageBaseAddress)
 	return ImageNTHeader.OptionalHeader.Subsystem;
 }
 
-/**
- * Function to retrieve the subsytem of a process x64.
- * \param hProcess : handle of the process.
- * \param lpImageBaseAddress : image base address of the process.
- * \return : the process subsystem charateristics.
- */
 DWORD GetSubsystemEx64(const HANDLE hProcess, const LPVOID lpImageBaseAddress)
 {
 	constexpr IMAGE_DOS_HEADER ImageDOSHeader = {};
@@ -170,11 +164,6 @@ DWORD GetSubsystemEx64(const HANDLE hProcess, const LPVOID lpImageBaseAddress)
 	return ImageNTHeader.OptionalHeader.Subsystem;
 }
 
-/**
- * Function to clean and exit target process.
- * \param lpPI : pointer to PROCESS_INFORMATION of the target process.
- * \param hMalFileContent : handle of the source image content.
- */
 void CleanAndExitProcess(const LPPROCESS_INFORMATION lpPI, const HANDLE hMalFileContent)
 {
 	if (hMalFileContent != nullptr && hMalFileContent != INVALID_HANDLE_VALUE)
@@ -202,9 +191,6 @@ void CleanProcess(const LPPROCESS_INFORMATION lpPI, const HANDLE hMalFileContent
 		CloseHandle(lpPI->hProcess);
 }
 
-/* The Base Relocation Data Directory is essential for handling the relocation of addresses in the executable
-	when it's loaded into memory at an address different from its preferred base address. If the condition is true,
-	it implies that the PE file requires address relocation information to be applied when loading the executable into memory. */
 BOOL HasRelocation32(const LPVOID lpImage)
 {
 	const auto lpImageDOSHeader = (PIMAGE_DOS_HEADER)lpImage;
