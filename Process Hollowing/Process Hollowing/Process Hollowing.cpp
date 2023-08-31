@@ -201,9 +201,6 @@ BOOL HasRelocation32(const LPVOID lpImage)
 	return FALSE;
 }
 
-/* The Base Relocation Data Directory is essential for handling the relocation of addresses in the executable
-	when it's loaded into memory at an address different from its preferred base address. If the condition is true,
-	it implies that the PE file requires address relocation information to be applied when loading the executable into memory. */
 BOOL HasRelocation64(const LPVOID lpImage)
 {
 	const auto lpImageDOSHeader = (PIMAGE_DOS_HEADER)lpImage;
